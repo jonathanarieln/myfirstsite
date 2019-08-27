@@ -17,11 +17,21 @@ Route::get('/contact', 'PagesController@contact')->name('contact');
 
 Route::get('/about', 'PagesController@about')->name('about');
 
+
 Route::get('/projects', 'ProjectsController@index')->name('projects');
+
+Route::get('/projects/create', 'ProjectsController@create')->name('projects.create');
+
+Route::get('/projects/{project}', 'ProjectsController@show');
 
 Route::post('/projects', 'ProjectsController@store')->name('projects.store');
 
-Route::get('/projects/create', 'ProjectsController@create')->name('projects.create');
+Route::get('/projects/{project}/edit', 'ProjectsController@edit');
+
+Route::patch('/projects/{project}', 'ProjectsController@update');
+
+Route::delete('/projects/{project}', 'ProjectsController@destroy');
+
 
 
 
